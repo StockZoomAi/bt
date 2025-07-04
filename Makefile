@@ -2,7 +2,23 @@ TMPREPO=/tmp/docs/bt
 
 default: build_dev
 
-.PHONY: dist upload docs pages serve klink notebooks test lint fix develop
+.PHONY: help dist upload docs pages serve klink notebooks test lint fix develop
+
+help:
+	@echo "Available targets:"
+	@echo "  build_dev  - Build C extensions in-place (default)"
+	@echo "  develop    - Install package in development mode with dependencies"
+	@echo "  test       - Run tests with coverage"
+	@echo "  lint       - Check code style with ruff"
+	@echo "  fix        - Auto-fix code style with ruff"
+	@echo "  dist       - Build distribution packages"
+	@echo "  upload     - Upload packages to PyPI"
+	@echo "  docs       - Build documentation"
+	@echo "  pages      - Deploy docs to GitHub pages"
+	@echo "  serve      - Serve documentation locally"
+	@echo "  clean      - Remove build artifacts and compiled files"
+	@echo "  notebooks  - Start Jupyter notebook server"
+	@echo "  klink      - Update klink theme"
 
 develop:
 	python -m pip install -e .[dev]
